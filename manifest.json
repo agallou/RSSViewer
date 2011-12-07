@@ -1,0 +1,14 @@
+{
+  "name": "RSSViewer",
+  "version": "0.1",
+  "description": "Visualisation des fichiers RSS non groupés",
+  "background_page": "background.html",
+  "icons": {"16": "img/16.png", "48": "img/48.png", "128": "img/128.png"},
+  "permissions": [
+    "tabs", "http://*/*", "file:///*"
+  ],
+  "content_scripts": [{
+    "matches": ["file:///*", "http://*/*"],
+    "js": ["js/vendor/jquery-1.6.2.min.js", "js/bulma.js", "js/bootstrap.js"]
+  }]
+}

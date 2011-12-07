@@ -1,0 +1,153 @@
+<head>
+  <style type="text/css">
+    html
+    {
+      background-color: #ccc;
+    }
+
+    body
+    {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    #header
+    {
+      position: fixed;
+      width: 100%;
+      background-color: #fff;
+    }
+
+    #header #logo
+    {
+      float: left;
+      margin: 5px;
+    }
+
+    #header h1
+    {
+      font-size: 22px;
+      margin-top: 16px;
+      margin-left: 2px;
+      color: #39393b;
+      font-family: Arial;
+      display: inline;
+      float: left;
+    }
+
+    #header h2
+    {
+      font-size: 12px;
+      margin-top: 23px;
+      margin-right: 10px;
+      color: #777;
+      font-family: Arial;
+      display: inline;
+      float: right;
+    }
+
+    #header h2 a
+    {
+      color: #777;
+    }
+
+    .menu
+    {
+      margin-top: 58px;
+      position: fixed;
+      width: 100%;
+      background-color: #39393b;
+      padding: 2px 10px;
+      height: 22px;
+      color: #ddd;
+      font-size: 13px;
+      font-family: Arial;
+    }
+
+    .menu .info
+    {
+      padding-right: 15px;
+    }
+
+    .menu .option
+    {
+      padding: 0 15px;
+      border-left: 1px dotted #ddd;
+    }
+
+    label, input[type=checkbox]
+    {
+      cursor: pointer;
+    }
+
+    #content
+    {
+      margin-top: 78px;
+      font-size: 14px;
+      font-family: monospace;
+      padding: 20px 10px;
+      background: #ccc;
+      clear: both;
+    }
+
+    .clear
+    {
+      clear: both;
+    }
+    
+    table.inline
+    {
+      padding:  0;
+      margin:  0;
+      display: inline;
+      float: left;
+      margin-right: 5px;
+    }
+
+    table td
+    {
+      margin:  0px;
+      background: #ddd;
+      height: 26px;
+      border-radius: 5px;
+      padding: 5px 10px 5px 5px;
+    }
+
+    tr.desc td
+    {
+      background:  #FFF;
+    }
+
+    tr.value td
+    {
+      background:  #dbac92;
+    }
+
+    tr.significant td
+    {
+      background-color: #ccf;
+      color: #30f;
+    }
+
+    tr.titre td
+    {
+      background: #eee;
+      color: #666;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <a target="_blank" href="http://team-fusion.pmsipilot.com"><img id="logo" /></a>
+    <h1>RHSViewer</h1>
+    <h2>par la <a href="http://team-fusion.pmsipilot.com">Team Fusion</a></h2>
+    <div class="clear"></div>
+  </div>
+  <div class="menu">
+    <span class="info">Fichier RHS : <span id="fileName"></span></span>
+    <span class="option"><input type="checkbox" title="Montrer les champs importants" id="showImportantFields" name="showImportantFields" /><label for="showImportantFields">Montrer les champs importants</label></span>
+  </div>
+  <div id="content"></div>
+</body>
