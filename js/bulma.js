@@ -68,7 +68,7 @@ bulmaRss.getFileContent = function()
  */
 bulmaRss.getFileFormat = function(content)
 {
-  if(content.match(/^.{9}0(15)|(16)/) !== null)
+  if(content.match(/^.{9}01[56]/) !== null)
   {
     return this.FORMAT_RSS;
   }
