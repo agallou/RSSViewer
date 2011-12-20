@@ -1,5 +1,6 @@
 var bulmaRss = {
   FORMAT_RSS: 'RSS',
+  FORMAT_RSS_114: 'RSS114',
   FORMAT_RSS_015: 'RSS015',
   FORMAT_RSS_016: 'RSS016',
   FORMAT_RSS_115: 'RSS115',
@@ -41,6 +42,37 @@ var bulmaRss = {
     'zone_reservee'          : {label: "Zone réservée"}
   },
   RSS_DESCRIPTORS: {
+    RSS114: {
+      'finess'                : {from:    1, to:    9},
+      'version_rss'           : {from:   10, to:   12},
+      'num_rss'               : {from:   28, to:   47},
+      'num_sej'               : {from:   48, to:   67},
+      'num_rum'               : {from:   68, to:   77},
+      'date_naissance'        : {from:   78, to:   85},
+      'sexe'                  : {from:   86, to:   86},
+      'um'                    : {from:   87, to:   90},
+      'type_autorisation_lit' : {from:   91, to:   92},
+      'date_entree_um'        : {from:   93, to:  100},
+      'mode_entree_um'        : {from:  101, to:  101},
+      'provenance'            : {from:  102, to:  102},
+      'date_sortie_um'        : {from:  103, to:  110},
+      'mode_sortie_um'        : {from:  111, to:  111},
+      'destination'           : {from:  112, to:  112},
+      'code_postal'           : {from:  113, to:  117},
+      'poids_nouveau_ne'      : {from:  118, to:  121},
+      'age_gestationnel'      : {from:  122, to:  123},
+      'nb_seance'             : {from:  124, to:  125},
+      'nb_das'                : {from:  126, to:  127},
+      'nb_donnees_doc'        : {from:  128, to:  129},
+      'nb_zone_acte'          : {from:  130, to:  132},
+      'diag_dp'               : {from:  133, to:  140},
+      'diag_dr'               : {from:  141, to:  148},
+      'igs2'                  : {from:  149, to:  151},
+      'confirmation_codage'   : {from:  152, to:  152},
+      'type_machine_radio'    : {from:  153, to:  153},
+      'type_dosimetrie'       : {from:  154, to:  154},
+      'zone_reservee'         : {from:  155, to:  165}
+    },
     RSS015: {
       'finess'                : {from:    1, to:    9},
       'version_rss'           : {from:   10, to:   12},
@@ -209,6 +241,10 @@ bulmaRss.getFormat = function(content)
   }
 
   //rss groupés
+  if(content.match(/^.{9}114/) !== null)
+  {
+    return this.FORMAT_RSS_114;
+  }
   if(content.match(/^.{9}115/) !== null)
   {
     return this.FORMAT_RSS_115;
@@ -235,6 +271,7 @@ bulmaRss.computeFile = function(content)
     case this.FORMAT_RSS_016:
     case this.FORMAT_RSS_115:
     case this.FORMAT_RSS_116:
+    case this.FORMAT_RSS_114:
      fileAsHtml = this.RSSHtml(content);
      break;
   }
