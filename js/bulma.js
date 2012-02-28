@@ -19,11 +19,11 @@ var bulmaRss = {
     'um'                     : {label: "Unité médicale", significant: true},
     'type_autorisation_lit'  : {label: "Type d'autorisation lit"},
     'date_entree_um'         : {label: "Date entrée UM", type: 'date', significant: true},
-    'mode_entree_um'         : {label: "Mode entrée UM"},
-    'provenance'             : {label: "Provenance"},
+    'mode_entree_um'         : {label: "Mode entrée UM", type: 'mode_entree'},
+    'provenance'             : {label: "Provenance", type: 'provenance'},
     'date_sortie_um'         : {label: "Date sortie UM", type: 'date', significant: true},
-    'mode_sortie_um'         : {label: "Mode sortie UM"},
-    'destination'            : {label: "Destination"},
+    'mode_sortie_um'         : {label: "Mode sortie UM", type: 'mode_sortie'},
+    'destination'            : {label: "Destination", type: 'destination'},
     'code_postal'            : {label: "Code postal"},
     'poids_nouveau_ne'       : {label: "Poids nouveau né"},
     'age_gestationnel'       : {label: "Age gestationnel"},
@@ -407,7 +407,6 @@ bulmaRss.format = function(value, descriptor)
   {
     return value;
   }
-
   switch(descriptor.type)
   {
     case 'date':
@@ -422,6 +421,48 @@ bulmaRss.format = function(value, descriptor)
       {
         case '1': return 'H';
         case '2': return 'F';
+      }
+      break;
+    case 'mode_entree':
+      switch (value)
+      {
+        case '0': return '0 - Transfert pour ou après réalisation acte';
+	case '6': return '6 - Mutation';
+	case '7': return '7 - Transfert';
+	case '8': return '8 - Domicile';
+      }
+      break;
+    case 'provenance':
+      switch (value)
+      {
+        case '1': return '1 - MCO';
+	case '2': return '2 - SSR';
+	case '3': return '3 - SLD';
+	case '4': return '4 - PSY';
+	case '5': return '5 - Urgences';
+	case '6': return '6 - HAD';
+	case '7': return '7 - SHM';
+      }
+      break;
+    case 'mode_sortie':
+      switch (value)
+      {
+        case '0': return '0 - Transfert pour ou après réalisation acte';
+	case '6': return '6 - Mutation';
+	case '7': return '7 - Transfert';
+	case '8': return '8 - Domicile';
+	case '9': return '9 - Décès';
+      }
+      break;
+    case 'destination':
+      switch (value)
+      {
+        case '1': return '1 - MCO';
+	case '2': return '2 - SSR';
+	case '3': return '3 - SLD';
+	case '4': return '4 - PSY';
+	case '6': return '6 - HAD';
+	case '7': return '7 - SHM';
       }
       break;
     case 'entier':
