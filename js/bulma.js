@@ -427,42 +427,42 @@ bulmaRss.format = function(value, descriptor)
       switch (value)
       {
         case '0': return '0 - Transfert pour ou après réalisation acte';
-	case '6': return '6 - Mutation';
-	case '7': return '7 - Transfert';
-	case '8': return '8 - Domicile';
+        case '6': return '6 - Mutation';
+        case '7': return '7 - Transfert';
+        case '8': return '8 - Domicile';
       }
       break;
     case 'provenance':
       switch (value)
       {
         case '1': return '1 - MCO';
-	case '2': return '2 - SSR';
-	case '3': return '3 - SLD';
-	case '4': return '4 - PSY';
-	case '5': return '5 - Urgences';
-	case '6': return '6 - HAD';
-	case '7': return '7 - SHM';
+        case '2': return '2 - SSR';
+        case '3': return '3 - SLD';
+        case '4': return '4 - PSY';
+        case '5': return '5 - Urgences';
+        case '6': return '6 - HAD';
+        case '7': return '7 - SHM';
       }
       break;
     case 'mode_sortie':
       switch (value)
       {
         case '0': return '0 - Transfert pour ou après réalisation acte';
-	case '6': return '6 - Mutation';
-	case '7': return '7 - Transfert';
-	case '8': return '8 - Domicile';
-	case '9': return '9 - Décès';
+        case '6': return '6 - Mutation';
+        case '7': return '7 - Transfert';
+        case '8': return '8 - Domicile';
+        case '9': return '9 - Décès';
       }
       break;
     case 'destination':
       switch (value)
       {
         case '1': return '1 - MCO';
-	case '2': return '2 - SSR';
-	case '3': return '3 - SLD';
-	case '4': return '4 - PSY';
-	case '6': return '6 - HAD';
-	case '7': return '7 - SHM';
+        case '2': return '2 - SSR';
+        case '3': return '3 - SLD';
+        case '4': return '4 - PSY';
+        case '6': return '6 - HAD';
+        case '7': return '7 - SHM';
       }
       break;
     case 'entier':
